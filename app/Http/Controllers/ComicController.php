@@ -15,4 +15,12 @@ class ComicController extends Controller
 
         return view('comics', compact('nav', 'icons', 'comics'));
     }
+
+    public function single($id) {
+        $nav = config('db.menu');
+        $icons = config('db.icons');
+        $singleComic = Comic::find($id);
+
+        return view('singleComic', compact('nav', 'icons', 'singleComic'));
+    }
 }

@@ -58,11 +58,11 @@
                             <h5 class="mt-4 pb-4 m-0 border-bottom">Talent</h5>
                             <div class="description d-flex py-2 border-bottom">
                                 <p class="mykey m-0">Art by:</p>
-                                <p class="myvalue m-0">{{ implode(', ', $singleComic['artists']) }}</p>
+                                <p class="myvalue m-0">{{ $singleComic['artists'] }}</p>
                             </div>
                             <div class="description d-flex py-2 border-bottom">
                                 <p class="mykey m-0">Written by:</p>
-                                <p class="myvalue m-0">{{ implode(', ', $singleComic['writers']) }}</p>
+                                <p class="myvalue m-0">{{ $singleComic['writers'] }}</p>
                             </div>
                         </div>
                     </div>

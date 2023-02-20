@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Use_;
-use App\Http\Controllers\ComicController;
+use App\Http\Controllers\ComicController as ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +17,4 @@ use App\Http\Controllers\ComicController;
 
 Route::get('/', [ComicController::class, 'index'])->name('comics_page');
 
-Route::get('/singleComic/{index}', function($index) {
-    $nav = config('db.menu');
-    $comics = config('db.comics');
-    $icons = config('db.icons');
-
-    $singleComic = $comics[$index];
-
-    return view('singleComic', compact('nav', 'icons', 'singleComic'));
-})->name('single_comic');
+Route::get('/singleComic/{id}', [ComicController::class, 'single'])->name('single_comic');
