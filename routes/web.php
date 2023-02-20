@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Use_;
+use App\Http\Controllers\ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,7 @@ use PhpParser\Builder\Use_;
 |
 */
 
-Route::get('/', function() {
-    $nav = config('db.menu');
-    $comics = config('db.comics');
-    $icons = config('db.icons');
-    return view('comics', compact('nav', 'comics', 'icons'));
-})->name('comics_page');
+Route::get('/', [ComicController::class, 'index'])->name('comics_page');
 
 Route::get('/singleComic/{index}', function($index) {
     $nav = config('db.menu');
