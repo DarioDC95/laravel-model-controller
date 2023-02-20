@@ -12,7 +12,7 @@
             <div class="myrow px-4">
                 @foreach ($comics as $item)   
                     <div class="mycol-sm">
-                        <a class="underline-none" href="{{ route('single_comic', ['id' => $item['id']]) }}">
+                        <a class="underline-none" href="{{ route('single_comic', ['id' => $item['slug']]) }}">
                             @include('partials.subPartials.cardMainComics')
                         </a>
                     </div>

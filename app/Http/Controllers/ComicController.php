@@ -19,7 +19,8 @@ class ComicController extends Controller
     public function single($id) {
         $nav = config('db.menu');
         $icons = config('db.icons');
-        $singleComic = Comic::find($id);
+        $singleComic = Comic::where('slug', '=', $id)->get();
+        $singleComic = $singleComic[0];
 
         return view('singleComic', compact('nav', 'icons', 'singleComic'));
     }
